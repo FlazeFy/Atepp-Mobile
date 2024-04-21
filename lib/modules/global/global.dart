@@ -6,3 +6,7 @@ class PieData {
   final num yData;
   final String text;
 }
+
+String selectedProject = '-';
+
+List<Map<String, String>> projectSlug = [];

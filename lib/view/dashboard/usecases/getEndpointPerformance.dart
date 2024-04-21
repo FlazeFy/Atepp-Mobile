@@ -1,5 +1,5 @@
-import 'package:atepp/modules/api/models/queries.dart';
-import 'package:atepp/modules/api/services/queries.dart';
+import 'package:atepp/modules/api/stats/models/queries.dart';
+import 'package:atepp/modules/api/stats/services/queries.dart';
 import 'package:atepp/modules/global/style.dart';
 import 'package:flutter/material.dart';
 
