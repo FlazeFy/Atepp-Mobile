@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DummyPage extends StatefulWidget {
-  const DummyPage({Key? key}) : super(key: key);
+  const DummyPage({super.key});
 
   @override
   StateDummyPageState createState() => StateDummyPageState();

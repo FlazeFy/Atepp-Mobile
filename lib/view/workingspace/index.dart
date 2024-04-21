@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WorkingSpace extends StatefulWidget {
-  const WorkingSpace({Key? key}) : super(key: key);
+  const WorkingSpace({super.key});
 
   @override
   StateWorkingSpaceState createState() => StateWorkingSpaceState();
