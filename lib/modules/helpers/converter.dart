@@ -1,25 +1,23 @@
-String getMessageResponseFromObject(val, type) {
-  var res = "";
+String generateLastDate(List<String> val) {
+  List<DateTime> dates = val.map((dt) => DateTime.parse(dt)).toList();
+  DateTime now = DateTime.now();
+  DateTime maxDate = dates
+      .reduce((value, element) => value.isAfter(element) ? value : element);
+  DateTime today = DateTime(now.year, now.month, now.day);
 
-  if (val is String) {
-    return val;
+  Duration difference = today.difference(maxDate);
+  int diff = difference.inDays;
+
+  String res = 'undefined';
+  if (diff == 0) {
+    res = 'Today';
+  } else if (diff == 1) {
+    res = 'Yesterday';
+  } else if (diff <= 7) {
+    res = '$diff days ago';
   } else {
-    if (type == "login") {
-      if (val.containsKey('username') != null) {
-        var usernameErr = val['username'];
-
-        if (usernameErr != null) {
-          res += "${usernameErr.join('\n')}";
-        }
-      }
-      if (val.containsKey('password')) {
-        var passErr = val['password'];
-        if (passErr != null) {
-          res += "${passErr.join('\n')}";
-        }
-      }
-    }
-
-    return res;
+    res = '${maxDate.day}/${maxDate.month}/${maxDate.year}';
   }
+
+  return res;
 }

@@ -1,5 +1,6 @@
 import 'package:atepp/modules/global/style.dart';
 import 'package:atepp/view/dashboard/usecases/getEndpointPerformance.dart';
+import 'package:atepp/view/dashboard/usecases/getMyProject.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class StateDashboardPageState extends State<DashboardPage> {
         body: ListView(
       padding: EdgeInsets.only(
           top: Get.height * 0.02, left: spaceXSM, right: spaceXSM),
-      children: [GetEndpointPerformance()],
+      children: [GetEndpointPerformance(), GetMyProjectDetail()],
     ));
   }
 }
