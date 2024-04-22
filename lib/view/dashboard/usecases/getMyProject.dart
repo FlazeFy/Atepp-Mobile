@@ -143,7 +143,70 @@ class StateGetMyProjectDetail extends State<GetMyProjectDetail> {
                 ),
               )
             ],
-          )
+          ),
+          const SizedBox(height: spaceSM),
+          Column(
+              children: data.map((dt) {
+            return Container(
+                padding: const EdgeInsets.all(spaceXMD),
+                margin: const EdgeInsets.only(bottom: spaceXMD),
+                width: Get.width,
+                decoration: BoxDecoration(
+                    color: darkColor,
+                    border: Border.all(color: dangerBG, width: 2)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(dt.title,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: textLG)),
+                    const SizedBox(height: spaceSM),
+                    Container(
+                        margin: const EdgeInsets.only(bottom: spaceXMD),
+                        child: Row(
+                          children: [
+                            Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: spaceMD, vertical: 4.5),
+                                decoration: const BoxDecoration(
+                                    color: dangerBG,
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(roundedLG))),
+                                child: Text(dt.category,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: textLG))),
+                            const SizedBox(width: spaceSM),
+                            Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: spaceSM, vertical: 4.5),
+                                decoration: const BoxDecoration(
+                                    color: infoBG,
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(roundedLG))),
+                                child: Text("${dt.totalEndpoint} endpoint",
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: textLG))),
+                          ],
+                        )),
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: spaceSM, vertical: 4.5),
+                        child: Column(children: [
+                          Text(
+                              "${dt.desc == null ? "- No Description Provided -" : dt.desc}")
+                        ])),
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: spaceSM, vertical: 4.5),
+                        child: Column(children: [
+                          Text(
+                              "${getDateToContext(DateTime.parse(dt.createdAt), 'calendar')}")
+                        ])),
+                  ],
+                ));
+          }).toList())
         ],
       );
     } else {
