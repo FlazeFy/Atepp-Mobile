@@ -169,7 +169,7 @@ class StateGetMyProjectDetail extends State<GetMyProjectDetail> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: spaceMD, vertical: 4.5),
                                 decoration: const BoxDecoration(
-                                    color: dangerBG,
+                                    color: successBG,
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(roundedLG))),
                                 child: Text(dt.category,

@@ -61,7 +61,7 @@ class BottomBarState extends State<BottomBar> {
                 ],
                 backgroundColor: darkColor,
                 unselectedItemColor: shadowColor,
-                selectedItemColor: primaryColor,
+                selectedItemColor: whiteColor,
                 onTap: (index) {
                   setState(() {
                     selectedIndex = index;

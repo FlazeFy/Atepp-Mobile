@@ -45,7 +45,7 @@ const Color infoBG = Color(0xFF009FF9);
 const Color infoLightBG = Color(0xFFE7F4FE);
 const Color hoverBG = Color(0xFFF2F2F2);
 
-const Color primaryColor = Color(0xFF3b82f6);
+const Color primaryColor = Color(0xFFF43B41);
 const Color darkColor = Color(0xFF121725);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color greyColor = Color(0xFF838181);
